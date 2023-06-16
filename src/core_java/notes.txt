@@ -1,0 +1,1935 @@
+Binary/Machine language [Low level Language]:
+- Binary Number system[ only 2 digits 0 and 1] base 2
+- problem with the binary is code is error-prone and difficult understand, write, debug
+- it takes a lot of time to write code
+- it will be expensive software
+- extensibility is hard
+- it is not user-friendly
+- we have to write a lot of code for simple requirements
+
+#Asembly language :
+- English like words, mnemonics e.g ADD NUM1, NUM2
+- Translator or assembler will translate the english code in binary.
+
+
+#High level programming language
+- C,C++, C#, Java
+- easy to understand for the developer.
+
+Computer : Compute[Process, Calculate]
+
+- What is Java?
+    -  it is high level programming language.
+
+- Language is the medium for the communication.
+- Every language has set of rules, grammar rules , set of characters,
+
+- programming is nothing but set of instructions given to computer.
+
+* Platform:
+- It is an environment which lets you execute the softwares.
+- Hardware platform: Machine
+- software platform : OS [Windows, mac, linux]
+Why Java?
+- Simple: a lot of complex concepts from C, C++ are removed
+- secure: no direct to access to memory locations, provided built-in security managers
+- platform independent
+- Write Code Once Run Anywhere[WORA]
+    App.java ---> JavaC --> Byte code .class ---> JVM --> Binary --> OS
+- Multithreaded: running multiple blocks of code at the same time.
+- high in performance : Multithreading, JIT[Just in Time Compiler]
+- Robust : Best in class exception, error handling, memory handling.
+- Dynamic : applications will be able to adapt
+- Object oriented : In java, everything is represented with help of class and object
+- portable
+
+# JDK, JRE, JVM
+Java Development Kit :
+- it is a software. [oracle.com]
+-it contains java compiler, profiler, debugger,
+- some libraries
+- Java Runtime Environment/Engine
+    - JRE contains Java Virtual Machine
+- we can use JDK for writing, compiling, debugging, executing the java applications
+- JDK will be used by developers.
+- We need JRE for execution which will be used end customer.
+
+# Steps to write to first java program
+Assumptions:
+    - we have machine with operating system.
+
+Step 1: Download and install JDK.[oracle.com]
+Step 2: Set path.
+        - it is optional if we are using IDE as IDE will itself set the temporary path
+        - Command prompt/ powershell/ terminal :
+            - These are the software present in the  OS which will help to interact with the OS.
+            - These are command based software to interact with OS
+          - If we want to give command[ compile java program with the help java compiler]
+            to the OS with the help of command prompt/terminal
+
+        To let Operating system know where is the java compiler, debugger, executor, we set the path
+        - Path setting is nothing but, location of the java binaries given to OS.
+
+Step 3: Write java code in a notepad and save the file with .java extension
+step 4: compile the java file with the help of java compiler
+        javac JavaFileName.java
+
+step 5: execute the java app
+        java ClassName
+
+
+------------------------------------------------------------------
+
+# How java works?
+App.java --> javac App.java --> generates the .class containing byte code--> java App
+
+
+- Variable : It is name given to a memory location address.
+- Uses of variable: It is used to store data inside the memory or access the existing data
+
+# Data type :
+- It specifies three things
+    - type of data that variable will hold
+    - size of the memory location. memory requirement
+    - It specifies range of allowed values that can be stored inside the variable
+* Types of data types available in java:
+1. byte - size: 1 byte, range: -128 to 127
+2. short - size: 2 bytes, range: -32768 to 32767
+3. int - size 4 bytes
+4. long  - size 8 bytes
+5. float - 4 bytes
+6. double - 8 bytes
+7. char - 2 bytes
+8. boolean - 1 byte
+
+How to create a variable?
+- dataType variableName = value;
+ e.g. int age = 50; // age is a variable, int is a data type, 50 is the value
+
+# Type casting for primitives:
+Type casting can be done for primitive as well as non-primitives.
+
+converting one data type value into another data type value.
+* Explicit typecasting - When we try to assign a bigger data type value to a smaller data type value then we have to perform explicit type casting
+    int intValue = 100;
+    byte byteValue = intValue;// we get compile time error
+    - We tell to the compiler we are fine with the data loss.
+
+    byte byteValue = (byte) intValue; // explicit type casting
+    - Developer is responsible for explicit type-casting
+
+* Implicit Type-casting :
+    - when we try to assign small data type value to bigger data type value
+    - Java compiler is responsible to perform implicit typecasting
+    - There won't be any data loss in case of implicit type-casting.
+          short shortValue = 100;
+          int a = shortValue; // implicit type casting is done by the java compiler
+
+
+explicit type casting --> upcasting, narrowing
+implicit type casting -->  downcasting, widing
+
+Autoboxing : converting primitive value into non-primitive
+Unboxing : converting non-primitive value into primitive
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Operators
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Arithmetic operators : +, -, *, /, %
+    - + operator will do mathematical addition when both the operands are of number type
+2. String concatenation operator : +
+    - it is the only operator which is overloaded in java.[does two jobs]
+    - + will perform string concatenation when one of the operand is String type
+    * expression evaluation will start from left to right
+
+
+#input for arithmetic operator will be number type and output will also be of number type
+
+--- Arithmetic operators are not applicable for boolean
+byte, short, int , char (+,-,*, /, %) byte, short, int , char ---> int
+byte, short, int , char, long (+,-,*, /, %) byte, short, int , char, long ---> long
+byte, short, int , char, long, float (+,-,*, /, %) byte, short, int , char, long,float ---> float
+byte, short, int , char, long, float,double (+,-,*, /, %) byte, short, int , char, long,float, double ---> double
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 3. Comparison Operators : > ,< , >= , <=, ==, !=
+ - These are applicable for number type.
+ - for boolean only == and != is applicable
+
+ output of Comparison operators : boolean
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Assignment operator : =
+we use = operator, to assign the right hand side value to a variable to the left
+left operand must be a variable type otherwise we get compile time error
+right operand can be:
+    1. direct value
+    2. variable
+    3. expression
+    4. function call
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.  Logical operators:
+Logical AND: &, &&
+Logical OR: |, ||,
+Logical XOR: ^
+Logical NOT : !
+
+- AND, OR, XOR, NOT these are not keywords available in java.
+
+Pure logical operators : &&, ||
+
+What is the difference between & and &&?
+- & will solve all the conditions and at last will give the result.
+- && will give the result immediatlly after the first false.
+- && is called as short hand, short-circuit operator
+
+! Not operators works on only boolean
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Unary Operators : Operators which works on only operand
+                   !
+Binary Operators : Operators which works on two operands
+                   - +, -, *, /, %, ==, !=, > ,< , >=, <=, &, &&, |, ||, ^
+Ternary Operators : Operators which works on three operands
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Increment / Decrement operators:
+++, --
+These are also called as unary operators
+++ : increment the value by 1
+-- : decrement the value by 1
+
+Operand in the increment/decrement operation must be a variable otherwise we get CTE
+
+Pre-increment :
+    - When we use ++ operator before the operand, it is called as pre-increment.
+    - e.g. int a = 1; ++a; SOP(a);//2
+    - In this, we first increment the value by 1 ,and then we assign the value.
+Post-increment :
+    - When we use ++ operator after the operand, it is called as post-increment.
+    - e.g. int a = 1; a++; SOP(a);//2
+    - In this, we first assign the value and then increment the value by 1.
+
+Pre-Decrement :
+    - When we use -- operator before the operand, it is called as pre-decrement.
+    - e.g. int a = 1; --a; SOP(a);//0
+    - In this, we first decrement the value by 1 ,and then we assign the value.
+Post-Decrement :
+    - When we use -- operator after the operand, it is called as post-decrement.
+    - e.g. int a = 1; a--; SOP(a);//0
+    - In this, we first assign the value and then decrement the value by 1.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Bitwise operators:
+& : AND
+|: OR
+^: XOR
+~: Negation
+<<: left shift
+>> : right shift
+>>>: unsigned right shift
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ternary operator: Which works on three operands
+
+Conditional Operator:
+
+operand1 ? operand2 : operand3
+
+operand1 : condition
+            1. direct value i.e. true or false
+            2. variable of type boolean
+            3. expression which results into boolean
+            4. function call which returns boolean
+Based on the condition, we get output.
+        If the condition is true, code after ? gets executed
+        If the condition is false, code after : gets executed
+
+In conditional operator,
+    input is a boolean value as operand1
+    output will be either operand2 which is followed ? or operand3 which is followed :
+
+
+---------------------------------------------------------------------------------------------------
+Control statements : These are the statements which controls the flow of execution of the program
+- If we do not want sequential execution, then we take help of control statements.
+
+- control statements helps you
+    - select specific code to execute
+    - select specific code to skip the execution
+    - select specific code to repeat the execution
+
+1. Conditional Statements
+    - it helps to select some part of the code to execute or skipping
+    - if-else
+    - switch
+
+2. Looping / Repeat / Iterative statements
+    -  It helps in executing the code repeatedly.
+    - for
+    - while
+    - do-while
+    - for each
+
+3. Transfer statements
+    - It helps in transferring the control from one location to another location
+    - break
+    - continue
+    - return
+---------------------------------------------------------------------------------------------------
+if: it is keyword
+    if(condition){
+        // statements
+    }
+    condition :
+        1. it can be direct boolean value
+        2. it can be expression whose result it boolean e..g (4 >3)
+        3. it can be variable which is of type boolean
+        4. it can be a function call which returns boolean type data.
+        5. if write non-boolean value we get CTE.
+    If the condition is true, the only code inside the {} will be executed
+    If the condition is false, the  code inside the {} will not be executed
+
+- we can write independent if.
+ we use if-else and switch to select some code to either execute or skip it for execution based some value.
+
+ if(true){ execute this}
+ if(flalse){ do not execute this code}
+
+ switch(value){
+    case :
+ }
+  In switch, we compare single value across multiple cases.
+  - doing equality operation
+
+We go with the switch when number of equality operations are more than 3.
+
+value :
+    - allowed values for switch value place : byte, short, int char, Byte, Short, Integer, Character, String, enum
+    - not allowed values : long, float, double, boolean, [Long, Float, Double, Boolean]
+
+switch case lables and value provided in the switch must be of same data type otherwise we get CTE
+_______________________________________________________________________________________________
+Instance : It is an allocated memory space at runtime in the program.
+
+Class :
+- class is a keyword to create Class[classification]
+- Class is a classification , categorization, grouping
+- it is a plan, structure, template, blueprint, set of guidelines, set of rules to create objects
+- we need class first inorder to create objects.
+- we can create any number of objects with given class.
+- so class will occupy less memory as compared to objects.
+
+why do we need a class?
+- we need class to create objects
+
+How do we create a class?
+e.g. class ClassName {
+    // plan to create objects.
+    }
+
+Object:
+- it is an instance of a class
+- it is a memory space allocated at runtime for class type data.
+- when we say we are creating object, we are actually allocating the memory space at run time
+- Object is also called as instance
+- But every instance need not be an object.
+- Object is nothing but memory allocation.
+
+Why do we need object?
+- we need objects to store or represent real life physical or logical entities in the program at runtime
+
+Every object has
+    - state | variables | columns | attributes | data | properties |
+    - behaviour | method | functions | procedure | routine | task | implementation
+
+How do we create an object ?
+e.g. class Student {
+        int rollNumber;
+        String studentName;
+    }
+
+    Student student = new Student();
+
+    // Student : it is a derived data type
+    // student : it is a reference variable which stores address or reference of an object
+    // new : is a keyword to create object
+    // Student(): it is a constructor. It is used to construct  or create object.
+
+    new Student(): It is an object
+
+# As part of the class, we can write different components
+    - variables
+        - local variable
+        - instance variables
+        - static variables
+    - methods
+        - instance method
+        - static method
+    - constructors
+        - default constructors
+        - zero parameterized constructor
+        - parameterized constructor
+    - blocks
+        - instance block
+        - static block
+    - nested classes
+        - inner class i.e. non-static nested class
+        - static nested class
+        - local inner class
+        - anonymous class
+
+
+1. we write java program in file with .java extension
+2. we compile that .java file with java compiler
+3. once .java file is compiled there will a .class file will be generated.
+    - javac App.java
+4. we run the .class file. we specify the class name which has main method
+    - java App
+
+JDK : Java Development Kit
+- JDK helps in writing , compiling and executing the java applications.
+- Developer needs to use JDK
+
+JDK consists of compiler, libraries, JRE.
+JRE consists of JVM
+
+- We use java compiler  for compiling the java files
+- we use JRE in turn JVM for java program execution.
+
+What is the job of JVM?
+- To convert the byte code into machine understandable code.
+
+To execute the app : java ClassName
+
+What is JVM ?
+- Java virtual Machine
+- JVM is abstract machine
+- It is a software which is developed by Java people.
+
+
+when we run the java app,
+- JVM instance will be created, JVM will be started.
+
+Once JVM is started,
+    - ClassLoader: Loads the class into the memory.
+    - Byte Code Verifier : It verifies the byte code from the .class
+    - program is loaded into the different memory compartments.
+        - Memory compartments
+            - HEAP:
+                - It is used to store the java objects
+            - Stack
+                - It is used to store local variables.
+                - it is used the store method execution stack
+            - Class or Method Area
+                - It is used to store static variables
+                - it is used to store class or method structures.
+            - Native method Area
+                - It is used to store the data related to non-java method such C, C++
+            - Native Method Stack Area
+                - It is used to store the data and method execution stack for non-java methods
+            - PC Registers
+                - It is used to store the next execution instruction
+
+        * native method interface:
+            - it is a framework or program to get the methods from native library and load into native method area
+        * native methods : these are non-java code
+        * native library : it is place where non-java code is present.
+        * Java Execution Engine : Converts the code into machine understandable code.
+
+    Java Compilers:
+        - it compiles java source conde into byte code.
+    JIT(Just in time Compilers):
+        - They compile the byte code into the machine understandable code.
+
+-----------------------------------------------------------------------------
+
+Class Components:
+
+1. Local variable:
+- it is used store the data which used to store temporary calculations in the program such
+- it is stored in stack memory area.
+- we create local variables inside the method, constructor, blocks
+- Local variables can't be accessed outside where they have defined.
+- Local variables will get the memory inside the stack memory area.
+- Local variables will get the memory whenever method, constructor or block is called
+- If we don't call the method, local variable will not be created.
+- at the method execution end, all the variables which are local to this method will be deleted.
+
+2. Instance variables:
+What? - variables which are created outside of method, constructor,block at class level are called as instance variables
+Why? - we use instance variables to store object specific information which is independent.
+    e.g. Account details for each customer.
+How? class Product{
+            int productId;
+            String productName;
+        }
+Where?- Instance variables will be stored as part an object inside the heap memory area
+How many times IV gets the memory?
+    - Every time we create object, instance variables will get the memory.
+- Instance variables will be removed once the object is destroyed.
+
+3. Static variables:
+What - It is a variable which is created outside all methods, constructor, blocks at class level with static keyword
+Why - We use static variables to store common data for all the objects
+How many times they get the memory: Static variables will get the memory only once at time of class loading
+when they will get the memory : at the time of class loading
+where they are stored? static variables are stored inside the CLASS or METHOD memory area
+How to access?
+- we access static variables with the help classname
+
+
+#To access instance variables we need object first
+    Syntax: reference.InstanceVariableName
+
+# To access static variables we don't need object. We need class to be loaded in the memory
+    Syntax: ClassName.StaticvariableName
+
+# Local variables are defined or created inside the method and accessed directly without any reference or classname
+    syntax : variableName
+
+
+_____________________________________________________
+Every object has three things :
+    1. identity
+    2. state / variables / attributes / columns / data / information /
+    3. behaviour / function / task / routine / procedure / implementation / method
+
+What are methods ?
+    - group of statements which are enclosed inside the curly braces which has a name
+    - which returns some value [if no value then we write void]
+    - might accept input[parameters]
+        syntax:
+           access_specifer return_type  methodName(input parameters){
+            // group of statements
+            //return statement optional
+            }
+Why do we need methods?
+- we use methods for code reusability purpose
+
+
+
+class components:
+variables
+    local variable : Tejal
+    instance variable : Rohit sagare
+    static variable : Akash Pawar
+methods
+    instance method : vaishnavi
+    static method : mrugnayani
+constructors
+    default constructor: sandesh
+    zero param constructors : mahesh
+    parameterzed: Yash
+    this keyword:  madhuri
+blocks
+    instance block : Nishant
+    static block: Rohit
+nested classes
+    inner classes: Onkar
+    static nested class : Anirudh
+    local inner class : Saurabh
+    anonymous class: Shivani
+
+------------------------------------------------------------------------------------------------------------------------
+# What is instance block?
+    - It is a block of code written inside the curly braces which does not have
+        - name
+        - parameters
+        - access modifier
+        - return type
+    created at class level outside all other components
+
+# Why we use instance block?
+    - We use instance block for non-initialization activity such as logging, auditing
+        - maintaining the object count.
+
+# How to use instance block?
+- Instance block will always be executed when we create an object
+- We can create object with different constructor still instance block will be called irrespective of which constructor call
+
+* we can write any number of instance blocks,
+    but all the instance blocks will be combined and executed together for every object creation
+
+# What is static block?
+    - It is a block of code written inside the curly braces created with static which does not have
+        - name
+        - parameters
+        - access modifier except static
+        - return type
+    created at class level outside all other components
+
+# Why we use static block?
+    - We use static block for performing one-time activity such as
+        - connection to the database
+        - connection to the file
+        - connection to the server
+        - loading a bigger file in the program
+
+# How to use static block?
+- we create the block as static {}
+-  load the class in the memory
+
+* we can write any number of static blocks,
+    but all the static blocks will be combined and executed together for every object creation
+
+Static block will be executed only once at the time of class loading
+
+___________________________________________________________________________________________
+Nested classes : A class defined inside another class
+1. Non-static nested class or Inner class :
+    - A class defined inside another class without static modifier
+    - An inner class can't contain static members.
+
+2. static nested class
+    - A class defined inside another class with static modifier
+    - It can contain both static and non-static members
+
+3. Local Inner class
+    - A class defined inside the method without any modifier
+    - A Local Inner class can't contain static members.
+
+4. Anonymous [abstraction]
+___________________________________________________________________________________________
+
+OOPS:
+1. Encapsulation
+- what it is ?
+    - it is a process of binding data members and methods together
+- why to use this?
+    - to achieve data security
+    - to get better control on the data
+- how to achieve/ implement encapsulation in Java?
+    - we make data members private so that it cannot be accessed outside the class directly
+
+e.g. class Employee{
+        private int employeeId;
+        private String employeeName;
+
+        //public getters and setters method
+
+        public int getEmployeeId(){
+            return this.employeeId;
+        }
+
+        public String getEmployeeName(){
+            return this.employeeName;
+        }
+
+        public void setEmployeeId(int employeeId){
+             this.employeeId = employeeId;
+        }
+
+        public void setEmployeeName(String employeeName){
+             this.employeeName = employeeName;
+        }
+
+    }
+
+#2. Inheritance
+# What is it ?
+- It is process of inheriting/acquiring the
+    non-private, non-static & non-final members from one object into another object
+
+* Super/ Parent/ Base class :
+    - It is the class where we define the common methods and data.
+
+* Child / Sub / Derived class
+    - It is the class which inherits the Parent class
+
+
+# Inheritance represents which type of relationship?
+    - It represents IS-A type of relationship
+    - we read Child IS-A of type Parent
+
+# Why to use Inheritance?
+    - to reuse the code
+    - to avoid code duplication
+
+# How to use or implement inheritance in Java?
+    - we can use extends keyword to implement inheritance through classes
+    - we define a class with common data and methods
+    - we define another class which extends Parent class
+
+e.g. class Loan {
+        //common data
+        //common methods
+    }
+    class PersonalLoan extends Loan {
+
+    }
+
+# what are the type of inheritance ?
+1. Single Level inheritance
+    - In this one class extends only one another clas
+    - It is supported through classes
+    - e.g. class A {}
+        class B extends A {}
+
+
+2. Multi-Level inheritance
+     - In this one class extends only one another clas & that class extends another class & so on
+     - It is supported through classes
+      - e.g. class A {}
+            class B extends A {}
+            class C extends B {}
+            class D extends C {}
+
+3. Cyclic inheritance
+    - When one class tries to extend itself
+    - It is not support through classes
+    - If we try to do it gives CTE
+    e.g. class A extends A {}
+
+4. Multiple inheritance
+    - when one class extends more than one class then it is called as multiple inheritance.
+    - It is not supported through classes
+    - It is supported through interfaces
+    - If we try to do it with classes it gives CTE
+    - e.g.
+            class A {}
+            class B {}
+            class C extends A, B {} //CTE
+** What is diamond problem / ambiguity?
+** Why multiple inheritance is not supported through classes?
+    -- When one class tries to extend more than class,
+        if both the parents have the same set of members
+        then child class will get confuse which member to access
+    - So to avoid this confusion, ambiguity, multiple inheritance is not supported through classes in java
+
+
+5. Hybrid inheritance
+    - when we combine multiple inheritance with any other type
+    - it is not supported through classes.
+
+6. Hierarchical inheritance
+    -
+--------------------------------------------------------------------------------------------------------
+
+- Every constructor in java there is a first line in the constructor added implicitly
+    that is call to the parent class constructor.
+     --- super();
+--------------------------------------------------------------------------------------------------------
+OOPS 3: Polymorphism:
+Poly : many
+morph : forms, methods, procedure, tasks, behaviour, function,
+
+- What it is?
+    - It is an ability of an object to change its behaviour either at compile time or runtime.
+
+- what do you mean by behaviour change?
+    -  object can change the behavior either at Compile time or run time.
+    - it means having multiple methods with the same name but having with different implementation
+
+
+* When object changes it behaviour at compile time, it is called as
+    - compile time polymorphism
+    - static binding
+    - early binding
+    *** call to the method is decided at compile time.
+
+    Q. how to achieve compile time polymorphism?
+    Ans. Method Overloading
+
+* When object changes its behaviour at run time, it is called as
+    - run time polymorphism
+    - dynamic binding
+    - late binding
+    *** call to the method is decided at run time.
+
+    Q. how to achieve run time polymorphism?
+        Ans. Method Overriding
+
+* What do you mean binding?
+- Binding is nothing but deciding method call binding
+- we decide which method will be called while executing the application.
+
+--------------------------------------------------------------------------------------------------------
+
+## What is method overloading?
+-- Defining multiple methods with the
+    - same name
+    - different signature
+        - either different type of parameters
+        - or different number of parameters.
+
+    - either in the same class
+    - or in the child class
+
+- in method overloading, call to the method is decided at compile time.
+- Method return type will not be considered in method overloading
+
+* We can define the method in the parent class
+    and same method in the child class with different signature
+    it is called as method overloading
+
+- Method overloading can happen in the same class as well as child class
+- we can overload
+    - private methods
+    - static methods
+    - final methods
+--------------------------------------------------------------------------------------------------------
+
+Method overriding:
+    - Defining a method in the child class with the
+        - same name
+        - same signature
+        - same return type
+        as of parent class method is called as method overriding
+
+- Method return type will be considered in case of Method overriding.
+- we cannot override
+    - private methods
+    - static methods
+    - final methods
+
+- For the access specifier we can do promotion not demotion
+e.g. Parent class  --->    Child Class
+    //default --->   //default, protected, public
+    //protected ---> //protected, public
+    //public ---->    //public
+
+--------------------------------------------------------------------------------------------------------
+OOPS:4 Abstraction
+
+- It is  a process of hiding the implementation details and just exposing the functionality.
+- abstract means INCOMPLETE
+- final means COMPLETE
+- we cannot use abstract and final together since they are opposite of each other.
+
+# Concrete Method: A method which has implementation or curly brace
+        e.g. class A {
+                //concrete method
+                void m1() {
+                    //method body
+                }
+            }
+
+# Concrete class: A class which can contain only concrete methods without any abstract modifier.
+
+# Abstract method :
+  - A method which is created without method body/curly braces with abstract keyword modifier
+        e.g. abstract int add(int a, int b);
+  - abstract methods cannot be defined inside the concrete class
+  - we can define abstract methods inside the abstract class or interface.
+
+# Abstract class :
+   - A class which is created with abstract keyword modifier
+   e.g.     abstract class ClassName {
+
+            }
+   - We can create empty abstract class.
+   - It is not mandatory to write abstract methods inside the abstract class.
+   - when one concrete class extends another abstract class,
+       - then with the inheritance, child class gets the abstract methods.
+       - we get compile time error. To resolve this error
+        - either make the child class abstract
+        - or override the abstract methods in the child class.
+
+** Abstract class can contain
+    - everything from concrete class
+    - abstract methods
+
+Q. can we create the object of an abstract class or interface?
+Ans.- No. Since by declaring the class abstract, class becomes incomplete.
+    - If we try to create object of an abstract class or an interface, we get
+        compile time exception called as "InstantiationException"
+
+
+Q. Can we write main method inside the abstract class and run it?
+Ans. Yes. we can run it also.
+
+Q. How can we call the constructor of an abstract class?
+Ans. We create the child class object and from child class constructor,
+    there will be call to the parent abstract class constructor
+
+
+Q. can we overload and override the abstract methods?
+Ans. we can overload as well as override the abstract methods.
+
+1. What is abstraction?
+2. What is concrete method?
+3. What is concrete class?
+4. What is abstract method?
+5. What is abstract class?
+6. Is it mandatory to write abstract methods inside the abstract class?
+    - No
+7. Can we create an object of an abstract class?
+    - No
+8. Can we write constructor,IV, IM, SV, SM, IB, SB, NC, IC inside the abstract class?
+    - Yes
+9. Can we define empty abstract class?
+    - Yes
+10. How can we call the constructor of abstract class?
+    - Create the child class object and from child class constructor call the parent class constructor
+
+11. What happens when one concrete class extends another abstract class?
+    - then with the inheritance, child class gets the abstract methods.
+    - we get compile time error. To resolve this error
+         - either make the child class abstract
+         - or override the abstract methods in the child class.
+
+12. Can we overload abstract methods?
+    - Yes
+13. Can we override abstract methods?
+    - Yes
+14. Can we make abstract methods as private?
+    - No
+15. Can we make abstract methods as static?
+    - No
+16. Can we make abstract methods as final?
+    - No
+17. Can we apply abstract keyword on variables?
+    - No
+18. Can we apply abstract keyword on constructor?
+    - No
+19. Can we apply abstract keyword on instance block?
+    - No
+20. What happens when one abstract class extends another abstract class?
+    - There won't be any compile time error.
+    - It is optional for the child abstract class to override the abstract methods.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Abstraction :
+    - hiding of implementation details and exposing the functionality
+    - to achieve abstraction we have abstract class and interface concept
+    - with abstract class we cannot achieve 100% abstraction.
+        - because in abstract class we can non-abstract method as well.
+    - we cannot achieve multiple inheritance thorough abstract class.
+
+interface :
+- Uses of interface:
+    - to achieve 100% abstraction
+    - and support multiple inheritance we can use interface concept
+
+- What is an interface?
+    - it is a keyword using which we can create interface.
+    - it is a fully unimplemented class.[ it is incomplete class]
+    - Since it is incomplete,
+        - we will have only abstract methods [till Java 7]
+        - we cannot create the object of this.
+        - After java 8, along with abstract methods,
+            we can have default methods and static methods in the interface
+    e.g.
+        interface InterfaceName {
+
+        }
+        interface MessageService {
+
+        }
+
+Q. Does interface creates the .class file when compiled? Yes
+
+Q. What all things we cannot write inside the interface in Java 8?
+Ans. As part of an interface, we cannot write
+    - instance variables
+    - instance methods
+    - instance block
+    - Inner class
+    - constructor
+    - static block
+    - Why we cannot have these components inside the interface?
+        - To support multiple inheritance.
+
+
+Q. What all things we can write inside the interface in Java?
+Ans.
+    - As part of Java 7 we can have
+        - only abstract methods
+        - variables of static final
+
+    - As part of Java 8 we can have
+        - abstract methods
+        - variables of static final
+        - default methods
+        - static methods
+
+# By default variables inside the interface are public static final
+# By default methods inside the interface are public abstract
+# By default nested classes inside the interface are public static
+
+
+Valid scenarios:
+1. One concrete/abstract class extends another concrete/abstract class
+2. One concrete/abstract class implements another interface
+3. one interface extends another interface
+
+InValid scenarios:
+1. one class extends interface
+2. one interface extends another class
+3. one interface implements another interface
+4. one interface implements another class.
+
+# when any concrete class implements an interface,
+  - then it is compulsory for the child concrete class
+    to override/implement the all abstract methods from interface
+
+ # when any abstract class implements an interface,
+  - then it is optional for the child concrete class
+    to override/implement the all abstract methods from interface
+
+
+# Marker interface:
+    - It is an empty interface. No abstract methods
+    - It can have default or static methods
+
+# Functional Interface(SAM): Java 8 feature
+    - A interface which contains Single Abstract method(SAM)
+    - It can have any number default methods
+    - It can have any number of static methods
+    - we can use @FunctionalInterface annotation on the interface[optional]
+
+Assignment: Find 20 predefined functional interface from Java 7 and Java 8
+    1. Comparable
+    2. Comparator
+    3. Consumer
+    4. Suppiler
+    5. Predicate
+    6. Function
+    7  BinaryOperator
+    8. DoubleBinaryOperator
+    9. BooleanSupplier
+    10. DoubleConsumer
+    11. DoubleFunction
+    12. DoublePredicate
+    13. DoubleSupplier
+
+Q. can we  make abstract method  as private inside the interface? no
+Q. can we  make abstract method  as static inside the interface? no
+Q. can we  make abstract method  as final inside the interface? no
+
+- What do you mean by implementing an interface or abstract class?
+- We create concrete child class and override the abstract methods
+
+# Anonymous class:
+- It is a class which does not have a name.
+- For anonymous class we define the class and create object of the class in the same line.
+Q. Why to use Anonymous class?
+Ans. We use anonymous class to give implementation for abstract class or interfaces.
+
+
+________________________________________________________________________________________________________________________
+Revision
+
+Abstraction : hiding of implementation[method body] and exposing the functionality
+
+How do we achieve the abstraction?
+1. Abstract class
+2. interface
+
+
+- concrete method : method with body
+						void m1(){
+							SOP(“Hello”);
+						}
+
+- concrete class : a class which contains only concrete methods
+
+- abstract method: method which is created without body and with abstract modifier
+
+					abstract void m1();
+	- we can’t write abstract methods inside the concrete class
+
+# abstract class : class created with abstract modifier
+
+					abstract class ClassName {
+
+					}
+
+
+- We can write the abstract methods either in the abstract class or interface.
+
+-** abstract means INCOMPLETE
+
+- We cannot create the object of an abstract class as well as interface.
+
+
+- What all components we can write inside the abstract class?
+	- We can write all the components from concrete class as well as abstract methods.
+
+
+- is it compulsory to write abstract methods inside the abstract class or interface?
+	- it is not compulsory. We can have empty class
+
+Can we write main method inside the AC and run that? Yes.
+
+
+- whenever a concrete class extends abstract class,
+	then it is compulsory for child class to override
+	all abstract methods from parent abstract class.
+
+
+
+- whenever an abstract class extends another abstract class,
+	then it is optional for child class to override
+	all abstract methods from parent abstract class.
+
+
+
+
+Can we create object of an abstract class? No.
+Then how can we call constructor of an AC?
+	- we create the child class object,
+		then from child class constructor
+	 there will be call to the Parent class constructor
+
+With abstract class we can’t achieve
+	1. 100% abstraction as we can have non-abstract methods in AC
+	2. Multiple inheritance is not supported.
+———————————————————————————————————————————————————————————————————————————————————————————————————
+
+Anonymous class:
+- it is a class without name.
+- We use anonymous class for implementing abstract classes or interfaces.
+- Since anonymous class don’t have name,
+	we have combine the class definition and object creation
+———————————————————————————————————————————————————————————————————————————————————————————————————
+
+interface: fully unimplemented class i.e. INCOMPLETE class
+	- it is a keyword using which we can create the interface
+	- interface is a fully unimplemented class.
+	- it will have only abstract methods till java 7
+	- From Java 8, we can have
+		- abstract methods
+		- default methods
+		- static methods
+
+- Since it is incomplete, we can’t create the object of an interface.
+
+- if we try to create object of an abstract class or interface
+	 we get one compile time exception InstatiaionException
+
+- why do we need interface?
+	1. To support 100% abstraction
+	2. To support Multiple inheritance.
+
+* what is “implements” keyword?
+- We use it to implement an interface.
+
+What do mean by implementing an interface?
+- We create a subclass with implements keyword and
+	override the abstract methods
+
+	class Child implements ParentInterface {
+		// override abstract methods
+	}
+
+Valid cases:
+1. One class extends another class
+2. One class implements another interface
+3. One interface extends another interface.
+
+Invalid cases:
+1. One class extends another interface
+2. One interface extends another class
+3. One interface implements another interface.
+
+
+Q. How multiple inheritance is supported through interfaces?
+A. One class can implement multiple interfaces
+	e.g.
+		interface I1 {}
+		interface I2 {}
+		class Child implements I1, I2{}
+	- To support multiple inheritance, interface cannot contain
+		- IV, IM, IB, SB, IC, Constructor
+
+
+By default,
+	variables are public static final
+	methods are public abstract
+	nested classes are public static
+
+
+# When one concrete class implements an interface,
+then it is mandatory for the child class to override all the abstract methods
+
+# When one abstract class implements an interface,
+then it is optional for the child class to override all the abstract methods
+____________________________________________________________________________________________________________________________________________________________________________________
+#Functional Interface:
+- it is a new feature of Java 8.
+- An interface which contains Single Abstract Method(SAM)
+	- any number of default methods
+	- any number of static methods
+- We can mark functional interface with @FunctionalInterface annotation
+- If we write 	@FunctionalInterface over the functional interface,
+	- if we introduce new abstract method inside the interface we get compile time error
+	e.g.
+		@FunctionalInterface
+		interface I {
+			void m1();
+		}
+
+Q. What are the different ways to implement a functional interface?
+    1. Traditional way
+        - create a separate subclass and override the method
+        e.g.
+        interface I{
+            void m1();
+        }
+
+        class A implements I {
+            void m1(){}
+        }
+
+        I i = new A();
+        i.m1();
+
+    2. Using Anonymous class
+        interface I{
+                    void m1();
+                }
+
+        I i  = new I() { void m1(){} };
+        i.m1();
+
+    3. Using Lambda expression
+        interface I{
+                 void m1();
+           }
+
+        I i = () -> {};
+
+__________________________________________________________________________________________________________________________________________
+Q. Java 7 interface what all things we can write?
+Ans.
+	1. Only abstract methods
+	2. Variables will be public static final
+
+
+Q. Java 8 interface what all things we can write?
+Ans.
+	1. Abstract methods : public abstract
+	2. public/protected Default methods
+	3. public static methods
+
+Q. Java 9 interface what all things we can write?
+Ans.
+	1. Default methods
+	2. public Static methods
+	3. Abstract methods
+	4. Private instance methods:
+		- we call private instance methods from public default methods
+	5. Private Static methods
+		-we call private static methods from public static methods
+__________________________________________________________________________________________________________________________________________
+
+We can implement normal interfaces using
+    - subclass way
+    - anonymous class way
+
+** We can implement Function interface using
+    1. subclass way
+    2. anonymous class way
+    3. Lambda expression
+----------------------------------------------------------------------------------------------------------------
+Lambda Expression:
+    - it is a java 8 feature
+    - it is one of the way to implement Functional interface.
+    - using lambda we can implement the FI in precise and short manner
+
+    - it is an anonymous function which represents abstract method implementation
+    - we can pass lambda as an argument to the method
+    - we can return lambda from a method
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+final:
+    - it is a keyword in java which means complete and no more change allowed
+    - it is applicable for variables, methods and classes
+
+final variables
+    - if we use final keyword with the variable then that variable value cannot be changed or reassigned.
+    - we can make local, instance and static variables as final
+    - we cannot just declare the final variables there value must be assigned before they are used.
+    - if we make instance variables final then there value can be initialized only once
+        - directly in the same line or inside the constructor or inside the block
+        - if we do it all three places will get CTE
+    - if we make static variables as final as its value must be initialized either in the same line or in the static block
+
+    * if we make reference variable final then its value cannot be changed or reassigned
+        but the object it points can be changed.
+
+final method
+    - if method is made final then that method cannot be overriden
+
+
+final class
+    - if a class is made final then that class cannot be extended
+
+
+IQ: difference between final, finalize & finally
+    - final is a keyword which we can apply on variables,methods & classes
+    - finalize is a method present inside the Object class
+    - finally is block in exception handling which we use to write clean up code
+
+_____________________________________________________________________________________________________________________
+
+call by value and call by reference
+
+**  Java is strictly call by value
+
+call by value means we call methods by passing values
+call by reference means we call methods by passing actual reference
+
+____________________________________________________________________________________________________
+Object class:
+    - it is predefined class present inside java.lang package
+    - it is super class for all the java existing or future classes.
+    - it is the ultimate parent of all classes.
+    - it is also called as cosmic class
+    - this class contains some useful methods which are used by all the classes.
+    - it contains 11 methods.
+    - we do not need to extend this class explicitly it is already implicitly extended
+
+  methods os Object class:
+      public final native java.lang.Class<?> getClass();
+      public boolean equals(java.lang.Object);
+      public native int hashCode();
+      public java.lang.String toString();
+      protected void finalize() throws java.lang.Throwable;
+      protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+
+      public final native void notify();
+      public final native void notifyAll();
+      public final native void wait(long) throws java.lang.InterruptedException;
+      public final void wait(long, int) throws java.lang.InterruptedException;
+      public final void wait() throws java.lang.InterruptedException;
+
+# getClass method:
+    - it is final and native method, so we cannot override
+    - it returns the object of a class called Class.
+    - using class Class reference we can call getName()
+        to get the name of class with complete package name as well
+
+# equals():
+    - it checks reference of the object
+    - if the references are equal it will return true else returns false.
+    - we can override the equals method
+    - if we override the equals then always child class method will be called.
+
+        Object equals method :
+            public boolean equals(Object obj) {
+                return (this == obj);
+            }
+
+
+# hashCode():
+    - it is a native method { it is non-java method}
+    - since it is a non-final method we can override this method
+    - hash { means small unique number/string}
+    - hashing : converting bigger string into smaller string
+    - every object in java means memory allocation, it will be stored inside the memory, it will have certain memory address
+    - developer do not have access to the original memory address as java does not support pointers
+
+    original memory address ---> hashing ---> integer[hashcode]
+    - hashcode is not the direct memory address
+    - it is just an integer which is calculated based on the memory address.
+
+
+# toString();
+       - toString returns a string value which contains
+            - complete class name along with package
+            - @
+            - Hexa decimal conversion of hashCode
+                Integer.toHexString(hashCode());
+
+       - internally it calls the getClass().getName() which returns complete class name & package name
+       - internally it calls the hashCode method
+       - same hashcode is then converted into hexadecimal format
+
+        - toString method is automatically called whenever we try to print the reference variable
+
+    public String toString() {
+            return getClass().getName() + "@" + Integer.toHexString(hashCode());
+        }
+
+# finalize():
+    - it is a method present in the Object class and method is empty
+    -  Garbage : unused or unreferenced objects
+    - Garbage collector:
+        - it is the background[daemon thread] which cleans or frees the unused or unreferenced objects
+    We can call explicitly garbage collector
+      - System.gc();
+
+  - finalize method will be called by garbage collector just before object gets deleted
+  - we use finalize to have some clean up code or some auditing , logging
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Array :
+
+
+Problem:
+    - if we want to store multiple values then we have to create these many variables
+    - managing, accessing, retrieving, maintaining all these variables will be a challenge
+    - it will increase the length of the code and it will be inefficient code
+
+Solution:
+    - By using array we can store multiple values of the same type in continuous memory locations efficiently
+
+
+What is an Array?
+- it is an non-primitive or reference type or derived data type
+- it is a collection of elements [homogeneous] of same type which are stored in continuous memory locations
+
+
+why to use array?
+- to store multiple values of same type in continuous memory locations
+
+How to use array?
+- when we know the elements directly then
+    int[] numbers = {1,2,,4,5};
+
+- when we don't the elements but we know the count
+   datatype[] arrayName = new datatype[size];
+   e.g.
+    int[] array = new int[5];
+       -int : is the type of elements that array is going to store
+       -[] : is the notation to say it is array variable. we don't write anything in the LHS[]
+       - array : is the reference variable name which points to an object which contains all elements stored sequentially
+       - new : is keyword to create object
+       - int[5]: 5 specifies the size of array or number of elements that array can store
+
+
+** whenever an array is created then there is an object created and that object contains all the elements
+- if we try to create an array with negative size we get RTE called NegativeArraySizeException
+
+- it is compulsory to specify the size of an array otherwise we get CTE
+- we can create an array with zero size
+   e.g. int[] array1 = new int[0];
+     int[] array2 = {};
+
+- all the array elements will be initialized with default value.
+
+- if we try to print the array reference variable,
+        its toStrong method will be called &
+        its hexadecimal hashcode will be printed
+
+####
+    - length is a variable created for every array.
+    - length is a instance variable
+    - length represents the size of an array
+    System.out.println(array.length);//gets the size of an array
+
+# Accessing the array elements
+- we can access array elements with the help of index
+- First element in the array is stored at base address which is pointed by array reference
+- Index helps in finding the location of an element in the array.
+  - index is a absolute measure to specify how far the element is from base address.
+  - array index starts from zero.
+
+  Address of an element = BASE_ADDRESS + DATA_TYPE_SIZE * INDEX;
+          First element = Base address;
+
+# Range of index
+    0 to [ arrayLength -1 ]
+
+-if we try to access the index which is not in the range/boundary of an array we get
+        ArrayIndexOutOfBoundsException.
+
+-------------- Revision 24th Nov 2022 ----------------------
+What is array?
+Why do  we use array?
+How do we the array?
+
+	datatype[] arrayName = new dataType[SIZE];
+	array elements can be accessed with the help of index and it starts from 0.
+
+	Memory address of given element in the array = BASE_ADDRESS  + DATA_TYPE_SIZE * INDEX;
+		INDEX: is the absolute unit which represents how far the element is from base address
+
+Drawbacks of array?
+	- either wastage or shortage of memory
+	- we can store only homogeneous elements
+	- no method support  for CRUD[Create, Read, Update, Delete] operations
+	- developer is responsible for every requirement such as add new element into the array, delete, search, sort…
+
+# Multi-Dimensional Array
+
+Array which contains another array as its elements is called as multi-dimensional array
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# String Handling
+
+
+
+* Introduction to String class:
+
+- String class is provided by Java and present inside the java.lang package
+- It is a final class which implmenets Serailizable, Comparable and CharSequence
+- It is also immutable class.**
+    - A class which is final
+    - Data members are private
+    - No public setter methods are provided
+    - Once we create an object of Immutable class then we cannot change the state of an object
+    - We cannot modify the immutable class object
+- We use String class to represent group of characters efficiently
+- We can represent group of characters with the help of String enclosed in double quotes
+- String class internally maintains the private array of characters to store the strings
+- String class provides several utility methods to manipulate the strings.
+    - convert the string into uppercase
+    - convert the string into lowercase
+    - remove the spaces leading and trailing
+    - replacing the strings
+
+* How to create String class objects?
+Ans. There are two ways:
+    1. new keyword
+        - String str = new String("abc");
+    2. using literal way
+        - String str = "abc";
+
+* What is SCP?
+Ans.- SCP stands for String Constant Pool Memory area
+    - SCP is a special memory area created under Heap from java 7 to store only String objects
+    - Inside the SCP only String can be stored.
+    - String object creation in SCP is conditional.
+
+* What is the difference between object creation using literal way and new keyword way?
+Ans.
+Using new keyword :
+    - String objects will be created compulsory inside the heap memory area without any object content check
+    - objects will be created also inside the SCP if the object is not present there
+    - references will point to the string objects from Heap and not to the SCP
+
+Using literal way:
+    - String objects will not be created inside the HEAP
+    - String Objects will be created inside the SCP if the object is not present
+    - If the object is already present inside the SCP, no new object will be created
+    - References will point to the String objects from SCP not to the Heap
+
+________________________________________________________________________________________________________________________________________________________________________
+            Exception Handling
+
+
+Explain default exception handling.
+- SOP(10/0);
+step 1: identify the problematic situation .i.e. exception occurred
+step 2: create the exception object of the corresponding situation class
+step 3: write the exception details to the object such as
+        where and why exception has occurred or situation details
+step 4: throw exception object or pass the exception object to the JRE
+step 5: JRE looks for the developer provided exception handler
+        if it is not there then exception object will be
+        handovered to the default exception handler
+step 6: default exception handler will print the exception details
+        and terminate the program abnormally
+
+
+
+# Explain exception hierarchy
+Throwable is extended by Exception and Error
+Exception class is extended by RuntimeException
+
+# Checked exceptions or compile time exceptions
+    - these problematic situations come at compilation time
+    - these are called as checked exceptions
+    - all those classes which extends Exception class are called as checked exception or compile time exceptions
+    examples:
+
+# UnChecked exceptions or Run time exceptions
+    - these problematic situations come at execution or run time
+    - these are called as unchecked exceptions
+    - all those classes which extends either RuntimeException
+        or Error class are called as unchecked exception or
+        run time exceptions
+
+    examples:
+
+__________________________________________________________________________________________________
+
+File Handling
+
+File:
+- it is a predefined class present in java.io package
+- it will help us in
+    - creating new file/ new folder
+    - rename a file/folder
+    - delete file/folder
+    - get permissions for a file
+    - set permission for a file
+    - we can't read or write directly with the file class
+    - for every file we need to work we need to have a separate java file class object
+
+Stream:
+    - it is a logical connection between source and destination
+    - based on the data we carry we have two types streams
+    - Byte oriented streams
+    - Character oriented streams
+
+# Byte Oriented streams
+   - In order read or write to different sources, destinations in the form bytes we have
+
+    - InputStream(AC)
+        - FileInputStream : We use this class to read from a file in terms of bytes
+        - BufferedInputStream : We use this class to read from a buffer in terms of bytes
+        - ObjectInputStream : We use this class to read java object from a file[De-serialization]
+
+    - OutputStream(AC)
+        - FileOutputStream : We use this class to write to a file in terms of bytes
+        - BufferedOutputStream : We use this class to write to a buffer in terms of bytes
+        - ObjectOutputStream : We use this class to write java object to a file [serialization|
+
+# Character Oriented streams
+   - In order read or write to different sources, destinations in the form characters we have
+
+    - Reader(AC)
+        - FileReader : We use this class to read from a file in terms of characters
+        - BufferedReader : We use this class to read from a buffer in terms of characters
+
+    - Writer(AC)
+        - FileWrite : We use this class to write to a file in terms of characters
+        - BufferedWriter : We use this class to write to a buffer in terms of characters
+
+# Serializable(I) : marker interface
+    - it is an empty interface.
+
+# Serialization :
+    - It is a process of saving the java objects in the file permanently
+    - To save the java objects in the file we need to make sure the class is of type Serializable
+    - To save object in the file we use: ObjectOutputStream
+    - We get NotSerializableException when we try to save object in the file which is not of type Serializable
+    - static members wont be serialized
+
+# De-Serialization :
+    - It is a process of reading the java objects from the file
+    - To read the java objects from the file we need to make sure the class is of type Serializable
+    - To read object from the file we use: ObjectInputStream
+
+# transient keyword
+    - we use transient keyword on instance variables to avoid saving it in the file in serialization process
+
+
+# keywords
+   - data types[13]
+        - byte, short, int, long, float,
+        - double, char, boolean, null, true,
+        - false, void, enum
+
+   - file level []
+        - package, import
+        -
+   - control statements [11]
+        - if, else, switch, continue, break,
+        - return, default, case, while, for,
+        - do
+
+   - access specifier/modifier [18]
+        - public, private, protected, static, final,
+        - this, super, abstract, interface, class,
+        - extends, implements, synchronized, transient, volatile
+        - new, instanceof, native
+
+    - exception handling [5]
+        - try, catch, finally, throw, throws
+
+    - unused keyword [2]
+        - goto
+        - const
+
+    - unit [2]
+        - assert
+        - strictfp
+
+**************************************************************************************************************************************************************************************
+Process: It is an application which is in execution
+Multi-tasking:
+    - doing multiple tasks at the same time.
+    - multi-tasking can happen at either OS level or program level
+    - multi-processing:
+        - running multiple processes at the same time
+        - it happens at OS level
+    - Multi-threading :
+        - running multiple blocks of code at the same time.
+        - Thread[block of code]
+        - in any application[process] there will be minimum of one thread.
+
+# Context switching:
+    - switching from one process to another process
+    - while doing the context switch there will be a process state save
+        - process state: [no.of registers, port on which it is running]
+    - context switch is expensive for processes as each process has separate memory area
+    - context switch is less expensive for threads as threads share the common memory
+
+# How to create an multi-threaded application in java?
+- To create multi-threaded application we use
+    - Thread(c)
+    - Runnable(FI)
+    - ThreadGroup
+    - These classes and interfaces are present in java.lang package
+
+# Thread:
+    - it is a block of code
+    - independent execution path
+    - it is class also present inside java.lang package
+    - by default there is one thread i.e. main thread is created by JVM
+    - exception in one thread will not cause abnormal termination in other threads
+    - for every thread there will be separate method execution stack
+
+   class Thread implements Runnable {
+        Runnable target;
+
+        Thread( Runnable target){
+            this.target = target;
+        }
+
+        void run(){
+             if(target !=null){
+                    target.run();
+                }
+             }
+        }
+
+   }
+
+# Thread(C):
+    - it is concrete class present in java.lang package and implements Runnable
+    - To create user-defined threads we will be using Thread class
+
+# What are the different ways to create thread?
+    1. using Thread class
+    2. using Runnable interface
+
+# How to create thread using Thread class?
+Ans.
+    1. create a java class which extends Thread
+    2. create a instance of that class
+    3. call the start method on it
+    4. By default any use defined thread name begins : Thread-0, Thread-1 ....
+
+#start() method:
+    - it is an instance method of Thread class
+    - it registers the thread with the Thread scheduler
+    - it internally calls run() method
+    - it makes the thread execution concurrent
+    - if we skip the start() method directly call the run() method it will be a single thread application
+
+# what happens when we bypass the start() method and call run() method?
+- It will be single threaded application
+- no new thread will be created
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Collection Framework:
+
+Iterable : it is a functional interface(SAM)
+            Iterator iterator();
+
+Iterator: It is an interface consists of two abstract methods
+            - boolean hasNext()
+            - Object next()
+
+# How to implement Iterator?
+    - create a separate subclass and override the abstract
+    - create an anonymous class
+
+    class IteratorImpl implements Iterator {
+           @Override
+            public boolean hasNext() {
+                        return false;
+            }
+
+            @Override
+            public Object next() {
+                return null;
+            }
+        }
+
+        Iterator iterator = new Iterator()
+        {
+               @Override
+                public boolean hasNext() {
+                            return false;
+                }
+
+                @Override
+                public Object next() {
+                    return null;
+                }
+        }
+
+# Collection(I) extends Iterable(I):
+1. A collection represents a group of objects, known as its elements.
+2. This interface is a member of the Java Collections Framework.[java.util]
+3. The root interface in the collection hierarchy.
+4. Some collections allow duplicate[List, Queue] elements and others do not[Set].
+5. Some are ordered [List] and others unordered[Set].
+6. The JDK does not provide any direct implementations of this interface:
+7. There is no direct implementation for Collection, Its sub-interfaces are implemented.
+8. This interface is typically used to pass collections around and manipulate them where maximum generality is desired.
+9. It is up to each collection to determine its own synchronization policy. [Vector]
+10. Collection elements will be compared with the help of equals();
+
+# methods of collection:
+  public interface java.util.Collection<E> extends java.lang.Iterable<E> {
+    public abstract boolean add(E);
+    public abstract boolean addAll(java.util.Collection<? extends E>);
+
+    public abstract boolean remove(java.lang.Object);
+    public abstract boolean removeAll(java.util.Collection<?>);
+    public boolean removeIf(java.util.function.Predicate<? super E>);
+    public abstract void clear();
+
+    public abstract int size();
+    public abstract boolean isEmpty();
+
+    public abstract boolean contains(java.lang.Object);
+    public abstract boolean containsAll(java.util.Collection<?>);
+
+    public abstract java.util.Iterator<E> iterator();
+
+    public abstract java.lang.Object[] toArray();
+    public abstract <T> T[] toArray(T[]);
+
+    public abstract boolean retainAll(java.util.Collection<?>);
+    public abstract boolean equals(java.lang.Object);
+    public abstract int hashCode();
+    //java 8 default methods:
+        public java.util.Spliterator<E> spliterator();
+        public java.util.stream.Stream<E> stream();
+        public java.util.stream.Stream<E> parallelStream();
+  }
+
+# List implementations [ArrayList, LinkedList, Vector, Stack] follows
+    - will have duplicate elements
+    - will maintain insertion order
+    - can store homogeneous as well as heterogeneous data
+    - can store any number of null
+
+# what is ArrayList and how it works?
+- it is class java.util pkg and implements List(I)
+- it works on growable array data structure.
+    - internally it maintains array to store the objects
+    - once initial capacity array is fulled then new array will be created
+    - old array content will be copied into new array
+    - new array capacity  = old_capacity * 1.5 + 1
+    - default capacity = 10
+- it is not thread safe class.
+- Best for  retrival of data [ objects are stored in sequential memory locations]
+- worst for modification of data [ for insertion and deletion of objects shifting of elements will happen ]
+
+# what is Vector and how it works?
+- it is class java.util pkg and implements List(I)
+- it works on growable array data structure.
+    - internally it maintains array to store the objects
+    - once initial capacity array is fulled then new array will be created
+    - old array content will be copied into new array
+    - new array capacity  = old_capacity * 2
+    - default capacity = 10
+- it is thread safe class legacy class
+- Best for  retrival of data [ objects are stored in sequential memory locations]
+- worst for modification of data [ for insertion and deletion of objects shifting of elements will happen ]
+
+# what is Stack and how it works?
+- it is class java.util pkg and extends Vector(C)
+- it works on stack[LIFO] and growable array data structure.
+    - internally it maintains array to store the objects
+    - once initial capacity array is fulled then new array will be created
+    - old array content will be copied into new array
+    - new array capacity  = old_capacity * 2
+    - default capacity = 10
+- it is thread safe class legacy class
+- Best for  retrival of data [ objects are stored in sequential memory locations]
+- worst for modification of data [ for insertion and deletion of objects shifting of elements will happen ]
+- It provides some extra methods for LIFO operations such as PUSH, POP, PEEK.
+
+# what is LinkedList and how it works?
+- it is class java.util pkg and implements List(I)
+- it works on doubly linked list data structure .
+    - internally it maintains doubly linked list of nodes[Objects]
+    - for every new object to be inserted it will create a node and will create the references
+    - Node contains [Prev, Data, Next]
+    - there is no concept of default capacity.
+- it is not thread safe class
+- Best for modification of data
+    - to insert or delete we just need to adjust the pointers
+    - there will not be any shifting of elements
+- Worst for  retrival of data
+    - since in the linked list we have two pointers i.e. head and tail
+    - to access any element we have to start traversing from head
+
+
+
+
+
+Collection Framework:
+
+Collection(I),:
+    add(Object)
+    addAll(Collection)
+    remove(object), remove(index)
+    removeAll(collection)
+    clear()
+    removeIf(Predicate)
+    size()
+    contains(Object)
+    containsAll()
+    isEmpty()
+    toArray()
+
+Collections(C): sort
+Collections.sort(list --> Comparable)
+
+List                 Set     Queue
+ArrayList
+Vector
+Stack - LIFO
+LinkedList
+_________________________________________________________________________________________________________________________________________________
+# cursors are used to retrieve the elements from given collection
+# There are three types of cursors:
+        - Iterator(I)
+        - ListItertator(I)
+        - Enumaration(I)
+
+# Enumeration(I):
+    - it is an interface present inside the java.util package
+    - it has two methods:
+        - boolean hasMoreElements();
+        - Object nextElement();
+    - It is applicable for Vector, HashTable keys and some legacy classes
+    - It helps us in retrieving the elements from given Legacy class one by one in forward direction only
+    - It reads the element and move the cursor to the next element
+    - While reading the data, we cannot modify, remove or replace the objects
+    - to get the implementation[object of type Enumaration] we use elements() method.
+    - elements() method is present inside Vector
+                Enumeration<Integer> enumeration = vector.elements();
+                while (enumeration.hasMoreElements()){
+                    System.out.println(enumeration.nextElement());
+                }
+
+# Iterator(I):
+    - it is an interface present inside the java.util package
+    - it has three methods:
+        - boolean hasNext();
+        - Object next();
+        - void remove();
+    - It is applicable for all collection implementing classes
+    - It helps us in retrieving the elements from given collection one by one in forward direction only
+    - It reads the element and move the cursor to the next element
+    - While reading the data, we can remove the object
+    - to get the implementation[object of type Iterator] we use iterator() method.
+    - iterator() method is present inside all Collection implementations
+                 Iterator<Integer> iterator = vector.iterator();
+                        while (iterator.hasNext()){
+                            Integer integer = iterator.next();
+                            if(integer%2==1){
+                                //remove the element
+                                iterator.remove();
+                            }
+                            System.out.println(integer);
+                        }
+
+
+
+# ListIterator(I):
+- it helps in retrieving the data as well modify, remove, add objects while reading
+
+
+
+
+
+
+
+
